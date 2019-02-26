@@ -58,6 +58,7 @@ export class CategoryService {
 
   private jsonDataToCategories(jsonData: any[]): Category[] {
     const categories: Category[] = [];
+
     jsonData.forEach(element => categories.push(element as Category));
     return categories;
   }
@@ -67,7 +68,7 @@ export class CategoryService {
   }
 
   private handleError(error: any): Observable<any> {
-    console.log('ERRO NA REQUISIÇÃO =>', error);
+    console.log('ERRO NA REQUISIÇÃO => ', error);
     return throwError(error);
   }
 }
