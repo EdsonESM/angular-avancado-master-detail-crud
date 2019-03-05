@@ -12,7 +12,7 @@ import toastr from 'toastr';
 @Component({
   selector: 'app-category-form',
   templateUrl: './category-form.component.html',
-  styleUrls: ['./category-form.component.sass']
+  styleUrls: ['./category-form.component.scss']
 })
 export class CategoryFormComponent implements OnInit, AfterContentChecked {
 
@@ -61,7 +61,7 @@ export class CategoryFormComponent implements OnInit, AfterContentChecked {
   private buildCategoryForm() {
     this.categoryForm = this.formBuilder.group({
       id: [null],
-      name: [null, [Validators.minLength(2)]],
+      name: [null, [Validators.required, Validators.minLength(2)]],
       description: [null]
     });
   }
