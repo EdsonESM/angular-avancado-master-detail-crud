@@ -60,7 +60,7 @@ export class EntryService {
     const entries: Entry[] = [];
 
     jsonData.forEach(element => {
-      const entry = Object.assign(new Entry(), element);
+      const entry = Object.assign(new Entry(null, null, null, null, null, null, null, null, null), element);
       entries.push(entry);
     });
 
@@ -68,7 +68,7 @@ export class EntryService {
   }
 
   private jsonDataToEntry(jsonData: any): Entry {
-    return Object.assign(new Entry(), jsonData);
+    return Object.assign(new Entry(null, null, null, null, null, null, null, null,  null), jsonData);
   }
 
   private handleError(error: any): Observable<any> {
